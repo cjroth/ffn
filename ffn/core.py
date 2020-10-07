@@ -576,7 +576,7 @@ class PerformanceStats(object):
         ser = self._get_series(freq).to_returns().dropna()
 
         plt.figure(figsize=figsize)
-        ax = ser.hist(bins=bins, figsize=figsize, normed=True, **kwargs)
+        ax = ser.hist(bins=bins, figsize=figsize, density=True, **kwargs)
         ax.set_title(title)
         plt.axvline(0, linewidth=4)
         return ser.plot(kind='kde')
